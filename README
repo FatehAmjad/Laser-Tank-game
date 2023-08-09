@@ -1,0 +1,38 @@
+Developed by: Fateh Amjad.
+GitHub: www.github.com/FatehAmjad
+
+NOTE: This game is fully functional, but may still not be designed in the best was; It was a first attempt at C programming.
+										
+									        ----- How to run the laserTank game -----
+
+(1) Firstly, to run the executable file "laserTank', you would have to run "make". 
+
+Type "make" in the terminal, and this would compile all .c files associated to run the game, and create the .o files for the same .c files. If no error is shown, then all files have been successfully compiled and are ready to run.
+
+(2) To run the game, call the executable name of the program -> "./laserTank map.txt"
+
+The game takes 8 command line arguements from the user in total. Hence, to actually run the game, we pass the map.txt file which takes in all 8 arguements automatically.
+
+    NOTE: All command line arguements take in int values. Hence, only integers should be entered, except for the direction of the player and enemy. For those, enter either 'u', 'd', 'l', 'r'
+    where -> 'u' = up, 'd' = down, 'r' = right, and 'l' = left
+
+    These arguements are directly extracted from the values that are saved in map.txt file, and implemented into their designated functions designed.
+
+(3) Once run, a map, with the player position and enemy position would be printed onto the screen. and another menu of 4 options would also be printed to the screen. This menu will help the user to navigate the player across the map by choosing between the commands of 'w' (to move up), 'd' (to move towards right), 's' (to move down), 'a' (to move towards left), or 'f' (to shoot a laser)
+
+(4) If you are shot by the enemy tank, you will lose the game and exited out of the program with a message "You Lost". If you successfully shoot the enemy tank instead, the game will terminate with a message printing "You won!".
+
+
+										  ----- Breakdown of the files -----
+
+(1) map.h and movement.h - These files contains the header guards, and creates a file linkage between the main.c file and the function-related .c files. In simpler terms, it basically imports all the functions that have been coded in different .c files, adds them into the map.h and movement.h files, and further, uses the same functions imported in the main.c file to run the game successfully, and further create a connenctivity between all .c files.
+
+(2) Makefile - Without this file, the game would not be executed when called as "./laserTank" in the command line. The Makefile creates an object file of each .c file, and also runs the flags that you would have to type out each and every time when compiling an individual .c file. 
+
+It basically, compiles all .c and creates .o files, if there are no errors, when you input "make" in the command line. If all compilation is complete without throiwng any error, you can now run the executable file in the terminal. 
+
+(3) main.c - The file that is called to run the game is main.c file. It contains all the necessary code, IMPORTED from other .c file functions, to execute the laserTank game when run in the command line by the user. It takes in a total of 8 total arguements, BUT FROM MAP.TXT file instead of them being entered by the user, and creates and outputs the map, player position, player direction, enemy postion and enemy direction based on what has been extracted from the map.txt file.
+
+(4) map.c - When the game is run, its run within a map with 2 players, one being the default player and the other being the enemy player. The .c file that is responsible for creating the map(2D-array),  and both the players, it is map.c file. Not only this, but also the characteristic of the player and enemy direction is defined within this .c file.
+
+(5) movement.c - To enable the player to move across the map, a function is required. This function is coded within this .c file, and based on what the user would input from the commands provided to themon the terminal, the player would react, and move within the map. The enemy player however, cannot move since they are set to a initialized position in the map based on where the user would prefer to setusing the command line arguements.
