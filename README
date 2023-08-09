@@ -3,7 +3,7 @@ GitHub: www.github.com/FatehAmjad
 
 NOTE: This game is fully functional, but may still not be designed in the best was; It was a first attempt at C programming.
 										
-									        ----- How to run the laserTank game -----
+						----- How to run the laserTank game -----
 
 (1) Firstly, to run the executable file "laserTank', you would have to run "make". 
 
@@ -23,7 +23,7 @@ The game takes 8 command line arguements from the user in total. Hence, to actua
 (4) If you are shot by the enemy tank, you will lose the game and exited out of the program with a message "You Lost". If you successfully shoot the enemy tank instead, the game will terminate with a message printing "You won!".
 
 
-										  ----- Breakdown of the files -----
+						   ----- Breakdown of the files -----
 
 (1) map.h and movement.h - These files contains the header guards, and creates a file linkage between the main.c file and the function-related .c files. In simpler terms, it basically imports all the functions that have been coded in different .c files, adds them into the map.h and movement.h files, and further, uses the same functions imported in the main.c file to run the game successfully, and further create a connenctivity between all .c files.
 
